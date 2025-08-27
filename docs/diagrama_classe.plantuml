@@ -1,1 +1,50 @@
-sdsd
+@startuml
+
+title Diagrama de Classes - Casa inteligente
+
+class Comodo {
+    +id: SERIAL
+    +nome: STRING
+    --
+    +adicionarDispositivo(): void
+    +listarDispositivos(): List
+    +removerDispositivo(): void
+}
+
+class Dispositivo {
+    +id: SERIAL
+    +nome: STRING
+    +id_comodo: SERIAL
+    +status: BOOLEAN
+    --
+    +ligar(): void
+    +desligar(): void
+    +alterarStatus(): void
+}
+
+class Cena {
+    +id: SERIAL
+    +nome: STRING
+    +ativa: BOOLEAN
+    --
+    +executar(): void
+    +encerrar(): void
+}
+
+class AcaoCena {
+    +id: SERIAL
+    +idCena: SERIAL
+    +idDispositivo: SERIAL
+    +ordem: INT
+    +acao: STRING
+    +intervalo: INT
+    --
+    +executarAcao(): void
+}
+
+Comodo "1" -- "0..*" Dispositivo
+Cena "1" -- "1..*" AcaoCena
+AcaoCena "1..*" -- "1" Dispositivo
+
+
+@enduml
