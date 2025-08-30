@@ -1,1 +1,74 @@
-"<!DOCTYPE html><html><head><title>Casa Inteligente</title></head><body><h1>Frontend</h1></body></html>" 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Controle da Casa Inteligente</h1>
+  </header>
+
+  <main>
+    <div class="grid2">
+      <div class="comodo">
+        <h3>Ar-condicionado</h3>
+        <div class="dispositivo" id="arcondicionado-card">
+          <span>Status</span>
+          <div class="acoes">
+            <button class="primary" onclick="alterarStatus('arcondicionado','ligado')">Ligar</button>
+            <button onclick="alterarStatus('arcondicionado','desligado')">Desligar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comodo">
+        <h3>TV</h3>
+        <div class="dispositivo" id="tv-card">
+          <span>Status</span>
+          <div class="acoes">
+            <button class="primary" onclick="alterarStatus('tv','ligada')">Ligar</button>
+            <button onclick="alterarStatus('tv','desligada')">Desligar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comodo">
+        <h3>Luz</h3>
+        <div class="dispositivo" id="luz-card">
+          <span>Status</span>
+          <div class="acoes">
+            <button class="primary" onclick="alterarStatus('luz','acesa')">Acender</button>
+            <button onclick="alterarStatus('luz','apagada')">Apagar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comodo">
+        <h3>Som</h3>
+        <div class="dispositivo" id="som-card">
+          <span>Status</span>
+          <div class="acoes">
+            <button class="primary" onclick="alterarStatus('som','ligado')">Ligar</button>
+            <button onclick="alterarStatus('som','desligado')">Desligar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Status Atual</h2>
+    <pre id="status"></pre>
+  </main>
+
+  <footer>
+    &copy; 2025 Casa Inteligente
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+ 
