@@ -1,50 +1,62 @@
 @startuml
 
-title Diagrama de Classes - Casa inteligente
+title Diagrama de Classes - Casa Inteligente
 
 class Comodo {
-    +id: SERIAL
+    +cod_comodo: SERIAL
     +nome: STRING
     --
-    +adicionarDispositivo(): void
-    +listarDispositivos(): List
-    +removerDispositivo(): void
+    +adicionarComodo()
+    +mostrarComodos()
+    +removerComodo()
 }
 
 class Dispositivo {
-    +id: SERIAL
+    +cod_dispositivo: SERIAL
     +nome: STRING
-    +id_comodo: SERIAL
     +status: BOOLEAN
     --
-    +ligar(): void
-    +desligar(): void
-    +alterarStatus(): void
+    +adicionarDispositivo()
+    +mostrarDispositivos()
+    +removerDispositivo()
+    +ligar()
+    +desligar()
+    +alterarStatus()
 }
 
 class Cena {
-    +id: SERIAL
+    +cod_cena: SERIAL
     +nome: STRING
     +ativa: BOOLEAN
     --
-    +executar(): void
-    +encerrar(): void
+    +adicionarCena()
+    +listarCenas()
+    +removerCena()
+    +executar()
+    +pausar()
+    +alterarStatus()
+}
+
+class Acao {
+    +cod_acao: SERIAL
+    +acao: STRING
+    --
+    +executarAcao()
 }
 
 class AcaoCena {
-    +id: SERIAL
-    +idCena: SERIAL
-    +idDispositivo: SERIAL
+    +cod_acao_cena: SERIAL
     +ordem: INT
-    +acao: STRING
     +intervalo: INT
     --
-    +executarAcao(): void
+    +adicionarAcao()
+    +removerAcao()
 }
 
-Comodo "1" -- "0..*" Dispositivo
+' RELACIONAMENTOS
+Comodo "1" -- "1..*" Dispositivo
+Dispositivo "1" -- "1..*" Acao
 Cena "1" -- "1..*" AcaoCena
-AcaoCena "1..*" -- "1" Dispositivo
-
+Acao "1" -- "1..*" AcaoCena
 
 @enduml
