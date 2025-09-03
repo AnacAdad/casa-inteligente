@@ -250,6 +250,7 @@ app.delete("/dispositivos/:nome", async (req, res) => {
   }
 });
 
+
 // -- CENAS --
 // Listar cenas básicas
 app.get("/cenas", async (req, res) => {

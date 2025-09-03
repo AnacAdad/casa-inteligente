@@ -429,6 +429,7 @@ function editarComodo() {
         });
 }
 
+
 function renderizarCenas() {
     const container = document.getElementById('cenas-container');
     container.innerHTML = '';

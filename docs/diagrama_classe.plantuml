@@ -1,5 +1,4 @@
 @startuml
-
 title Diagrama de Classes - Casa Inteligente
 
 class Comodo {
@@ -7,6 +6,7 @@ class Comodo {
     +nome: STRING
     --
     +adicionarComodo()
+    +editarComodo()
     +mostrarComodos()
     +removerComodo()
 }
@@ -17,6 +17,7 @@ class Dispositivo {
     +status: BOOLEAN
     --
     +adicionarDispositivo()
+    +editarDispositivo()
     +mostrarDispositivos()
     +removerDispositivo()
     +ligar()
@@ -27,14 +28,12 @@ class Dispositivo {
 class Cena {
     +cod_cena: SERIAL
     +nome: STRING
-    +ativa: BOOLEAN
     --
     +adicionarCena()
     +listarCenas()
     +removerCena()
     +executar()
     +pausar()
-    +alterarStatus()
 }
 
 class Acao {
@@ -42,6 +41,11 @@ class Acao {
     +acao: STRING
     --
     +executarAcao()
+}
+
+class AcaoDispositivo {
+    +cod_acao: INT
+    +cod_dispositivo: INT
 }
 
 class AcaoCena {
@@ -53,10 +57,11 @@ class AcaoCena {
     +removerAcao()
 }
 
-' RELACIONAMENTOS
+' ----------------- RELACIONAMENTOS -----------------
 Comodo "1" -- "1..*" Dispositivo
-Dispositivo "1" -- "1..*" Acao
-Cena "1" -- "1..*" AcaoCena
-Acao "1" -- "1..*" AcaoCena
+Dispositivo "1" -- "1..*" "AcaoDispositivo"
+Acao "1" -- "1..*" "AcaoDispositivo"
+Cena "1" -- "1..*" "AcaoCena"
+Acao "1" -- "1..*" "AcaoCena"
 
 @enduml
