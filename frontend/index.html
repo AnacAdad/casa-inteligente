@@ -1,1 +1,71 @@
-git
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Casa Inteligente</h1>
+    
+    <div class="casa">
+        </div>
+    
+    <div id="dispositivos-por-comodo">
+        <button id="fechar-dispositivos">Fechar</button>
+        <div id="conteudo-dispositivos"></div>
+    </div>
+
+    <h3>Adicionar Novo Dispositivo</h3>
+    <div class="adicionar-dispositivo">
+        <input type="text" id="novo-dispositivo-nome" placeholder="Nome do Dispositivo (Ex: Lâmpada)">
+        <select id="novo-dispositivo-comodo">
+            <option value="">Selecione o Cômodo</option>
+        </select>
+        <button id="adicionar-btn">Adicionar</button>
+    </div>
+
+    <h3>Adicionar Cômodo</h3>
+    <div class="adicionar-comodo">
+        <input type="text" id="add-comodo-nome" placeholder="Nome do Cômodo">
+        <button id="adicionar-comodo-btn">Adicionar</button>
+    </div>
+
+    <h3>Remover Cômodo</h3>
+    <div class="remover-comodo">
+        <select id="remover-comodo-select">
+            <option value="">Selecione o Cômodo</option>
+        </select>
+        <button id="remover-comodo-btn" class="remover">Remover</button>
+    </div>
+
+    <h3>Editar Cômodo</h3>
+    <div class="editar-comodo">
+        <select id="editar-comodo-select">
+            <option value="">Selecione o Cômodo</option>
+        </select>
+        <input type="text" id="novo-nome-comodo" placeholder="Novo nome do cômodo">
+        <button id="editar-comodo-btn">Salvar Edição</button>
+    </div>
+
+    <h2>Gerenciar Cenas</h2>
+    <div id="cenas-container">
+        </div>
+
+    <div class="gerenciar-cenas-form">
+        <h3>CRIAR/EDITAR CENA</h3>
+        <label for="cena-nome">Nome da Cena:</label>
+        <input type="text" id="cena-nome" placeholder="Ex: Cinema">
+
+        <div id="acoes-container">
+            </div>
+
+        <button id="add-acao-btn">Adicionar Ação</button>
+        <button id="salvar-cena-btn">Salvar Cena</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
